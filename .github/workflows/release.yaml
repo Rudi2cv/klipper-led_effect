@@ -51,10 +51,10 @@ jobs:
             POETRY_FOLDER: C:\Users\runneradmin\.local
     steps:
     - uses: actions/checkout@v4
-    - name: Set up Python 3.13
+    - name: Set up Python 3.14
       uses: actions/setup-python@v6
       with:
-        python-version: 3.13
+        python-version: 3.14
     #- name: cache poetry install
     #  uses: actions/cache@v3
     #  with:
@@ -70,7 +70,7 @@ jobs:
       with:
         path: simulator/.venv
         key: pydeps-${{ hashFiles('**/poetry.lock') }}
-    
+
     - name: Install environment
       working-directory: ./simulator
       run: ${{matrix.POETRY_FOLDER}}/bin/poetry install --no-interaction --no-root
