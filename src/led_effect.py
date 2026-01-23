@@ -1275,7 +1275,7 @@ class ledEffect:
             frame = []
 
             for h in range(self.heatLen):
-                c = randint(0,self.effectCutoff)
+                c = randint(0,int(self.effectCutoff))
                 self.heatMap[h] -= (self.heatMap[h] - c >= 0 ) * c
 
             for i in range(self.ledCount - 1, self.heatSource, -1):
